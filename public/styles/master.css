@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  background-color: grey;
+  background-color: slategrey;
 }
 
 body {
@@ -28,8 +28,8 @@ header #identity {
 }
 
 header #identity img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
@@ -57,7 +57,7 @@ header #social-media {
 }
 
 header #social-media a {
-  padding-right: 20px;
+  padding-right: 35px;
   text-decoration: none;
 }
 
@@ -72,10 +72,12 @@ main {
 }
 
 main section {
+  display: flex;
+  flex-flow: column;
   width: 75%;
   padding: 5%;
   margin-bottom: 50px;
-  background-color: lightgrey;
+  background-color: gainsboro;
   border-radius: 20px;
   border-style: ridge;
   border-width: 10px;
@@ -91,6 +93,7 @@ main section h3 {
 
 main section p {
   margin-bottom: 50px;
+  text-align: justify;
   font-weight: 500;
   font-size: 1.5em;
 }
@@ -100,6 +103,7 @@ main section a {
   background-color: rebeccapurple;
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
   color: white;
   font-size: 1.5em;
   font-weight: 300;
@@ -109,4 +113,34 @@ main section a:hover {
   box-shadow: 0 5px 20px rgba(50, 50, 50, 0.7);
   color: rebeccapurple;
   background-color: white;
+}
+
+main #projects .top-projects {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+main #projects .top-projects .project {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: cornsilk;
+  padding: 20px 30px;
+  margin-right: 20px;
+  box-shadow: 5px 5px 15px rgba(50, 50, 50, 0.7);
+}
+
+main #projects .top-projects .project:last-of-type {
+  margin-right: 0;
+}
+
+main #projects .top-projects img {
+  width: 350px;
+  height: 350px;
+}
+
+main #projects .top-projects p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
