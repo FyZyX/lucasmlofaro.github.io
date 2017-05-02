@@ -121,6 +121,7 @@ main #projects .top-projects {
 }
 
 main #projects .top-projects .project {
+  flex: 1;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
