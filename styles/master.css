@@ -5,20 +5,12 @@
 
 .grid {
     display: grid;
-    grid-template-rows: 2fr 0.5fr 10fr 1fr;
+    grid-template-rows: 100px 0.5fr 10fr 1fr;
     grid-template-areas:
     "head"
     "nav"
     "main"
     "foot";
-}
-
-.grid > *:nth-child(even) {
-    background-color: black;
-}
-
-.grid > *:nth-child(odd) {
-    background-color: darkslategrey;
 }
 
 html, body {
@@ -35,56 +27,69 @@ body * {
 }
 
 header {
+    background-color: #2a2a32;
     grid-area: head;
 }
 
 nav {
+    background-color: #1f1f26;
     grid-area: nav;
 }
 
 main {
+    background-color: #545864;
     grid-area: main;
 }
 
+.main_image img {
+    display: block;
+    width: 100%;
+}
+
+.main_image .intro_content {
+    color: white;
+    background-color: rgb(42, 42, 50);
+    padding: 30px;
+    font-family: "Avenir Next", sans-serif;
+}
+
+.main_image .intro_content h2 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.main_image .intro_content p {
+    font-size: 0.8em;
+    line-height: 185%;
+}
+
 footer {
+    background-color: #1f1f26;
     grid-area: foot;
 }
 
 @media screen and (min-width: 500px) {
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        grid-area: nav;
+    .main_image {
+        position: relative;
     }
 
-    nav ul {
-        display: flex;
-        align-items: stretch;
-        list-style: none;
+    .main_image .intro_content {
+        position: absolute;
+        right: 5%;
+        width: 55%;
+        border-radius: 30px;
+        background-color: rgba(42, 42, 50, 0.70);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .main_image .intro_content h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
     }
 
-    nav ul li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 5px 20px;
-        color: honeydew;
-        border-left: 1px solid honeydew;
-    }
-
-    nav ul li:hover {
-        border-color: goldenrod;
-        color: goldenrod;
-        transition: border-left .25s ease-in-out, color .25s ease-in-out;
-    }
-
-    nav ul li a {
-        display: flex;
-        align-items: center;
-        font-size: 0.6em;
-        font-family: "Avenir Next", sans-serif;
-        color: inherit;
-        text-decoration: none;
+    .main_image .intro_content p {
+        font-size: 1em;
+        line-height: 165%;
     }
 }

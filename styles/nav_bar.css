@@ -1,0 +1,68 @@
+#menu_icon {
+    margin-left: 3px;
+    flex: 1;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    flex: 10;
+    height: 0;
+    opacity: 0;
+}
+
+nav ul li {
+    color: honeydew;
+    padding: 5px 20px;
+}
+
+nav ul li:active {
+    color: goldenrod;
+}
+
+nav ul li a {
+    font-size: 0.6em;
+    font-family: "Avenir Next", sans-serif;
+    color: inherit;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 500px) {
+    #menu_icon {
+        display: none !important;
+    }
+
+    nav {
+        grid-area: nav;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        flex: 1;
+        opacity: 1 !important;
+        height: auto !important;
+    }
+
+    nav ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li:hover {
+        color: goldenrod;
+        transition: color .25s ease-in-out;
+    }
+
+    nav ul li a {
+        display: flex;
+        align-items: center;
+    }
+}
