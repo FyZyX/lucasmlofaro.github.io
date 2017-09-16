@@ -1,7 +1,3 @@
-function toggleMenuIcon(menuIcon) {
-    menuIcon.classList.toggle("change");
-}
-
 function resizeImageContent() {
     // Set font size
     var maxWidth = window.screen.width;
@@ -39,15 +35,6 @@ function scaleToRange(value, width, max, min) {
 }
 
 $(document).ready(function () {
-    $("#menu_icon").click(function () {
-        var ul = $("nav ul");
-        if (ul.css("height") === "0px") {
-            ul.animate({height: "150px", opacity: "1"});
-        } else {
-            ul.animate({height: "0px", opacity: "0"});
-        }
-    });
-
     resizeImageContent();
 
     $(window).resize(function () {

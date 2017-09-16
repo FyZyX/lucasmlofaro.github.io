@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Avenir Next", sans-serif;
 }
 
 .grid {
@@ -26,14 +27,32 @@ body * {
     flex: 1;
 }
 
+.purple {
+    color: rebeccapurple;
+}
+
+.goldenrod {
+    color: goldenrod;
+}
+
 header {
-    background-color: #2a2a32;
+    display: flex;
+    align-items: flex-end;
+    background-color: black;
     grid-area: head;
+}
+
+header div#name {
+    position: relative;
+    left: 5%;
+    font-size: 2.4em;
 }
 
 nav {
     background-color: #1f1f26;
     grid-area: nav;
+    border-top: 1px solid honeydew;
+    border-bottom: 1px solid honeydew;
 }
 
 main {
@@ -50,7 +69,6 @@ main {
     color: white;
     background-color: rgb(42, 42, 50);
     padding: 30px;
-    font-family: "Avenir Next", sans-serif;
 }
 
 .main_image .intro_content h2 {
