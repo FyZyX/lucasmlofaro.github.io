@@ -535,10 +535,10 @@ Hello World!</code></pre></div>
 
 <p>Maybe our application requires us to do some setup work before we run these important tasks. Knowing what we do about functions and closures in Python, we could simply write a higher-order function that accepts our very important function as an argument and returns a new function that eventually runs that function after it&#39;s done with the prep work.</p>
 
-<div><pre><code class="language-python">def setup(doWork):
+<div><pre><code class="language-python">def setup(do_work):
     def augmented_function():
         print(&quot;Getting things ready...&quot;)
-        doWork()
+        do_work()
     
     return augmented_function</code></pre></div>
 
@@ -638,10 +638,10 @@ file_handler.setFormatter(formatter)</code></pre></div>
 
 <p>In the end, you should be able to add <code>@custom_logger</code> to any function definition to see this functionality in action.</p>
 
-<div><pre><code class="language-python">@ custom_logger
-def my_func(x, y, z):
+<div><pre><code class="language-python">@custom_logger
+def my_func(a, b):
     from math import sqrt
-    return sqrt(x**2 + y**2 + z**2)</code></pre></div>
+    return sqrt(a**2 + b**2)</code></pre></div>
 
 <div><pre><code class="language-python">my_func(1, 2, 3)</code></pre></div>
 
