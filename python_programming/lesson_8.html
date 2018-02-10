@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+
+<style type="text/css">
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ol,
+ul,
+li,
+img {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+html * {
+  font-family: "ff-din-web-pro-1", "ff-din-web-pro-2", sans-serif;
+  font-size: 16px;
+  line-height: 19.2px;
+  color-profile: sRGB;
+}
+body {
+  margin: 40px 70px;
+}
+p {
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+strong {
+  font-weight: bold;
+}
+ol,
+ul {
+  margin-left: 2em;
+  margin-bottom: 20px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+}
+li {
+  margin-bottom: 10px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  text-transform: capitalize;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h2 {
+  font-size: 24.624px;
+  line-height: 29.548799999999996px;
+}
+h3 {
+  font-size: 23.44px;
+  line-height: 28.128px;
+}
+h4 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h5 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+h6 {
+  font-size: 22.16px;
+  line-height: 26.592px;
+}
+img {
+  margin-bottom: 20px;
+}
+h1 img,
+h2 img,
+h3 img,
+h4 img,
+h5 img,
+h6 img,
+p img {
+  margin-bottom: 0;
+}
+pre {
+  margin-bottom: 20px;
+}
+pre,
+code {
+  font-family: monospace;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 15px;
+}
+blockquote {
+  border-left: 4px solid;
+  padding: 0 15px;
+}
+blockquote > :first-child {
+  margin-top: 0;
+}
+blockquote > :last-child {
+  margin-bottom: 15px;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid;
+}
+h2 {
+  border-bottom: 1px solid;
+}
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
+html * {
+  color: #657b83;
+}
+html body {
+  background-color: #fdf6e3;
+}
+html h1,
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #586e75;
+  border-color: #657b83;
+}
+html a,
+html a:active,
+html a:visited {
+  color: #586e75;
+}
+html a:hover {
+  background-color: #eee8d5;
+}
+html pre {
+  color: #586e75;
+  background-color: #eee8d5;
+}
+html a,
+html a:active,
+html a:visited,
+html code.url {
+  color: #b58900;
+}
+html h1 {
+  color: #b58900;
+}
+html h2,
+html h3,
+html h4,
+html h5,
+html h6 {
+  color: #b58900;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+  * {
+    color: #000 !important;
+  }
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Lesson 8: Advanced Classes</h1>
+
+<h2 id="toc_1">Class Variables</h2>
+
+<p><strong>Class variables</strong> are shared amongst <em><strong>all instances</strong></em> of a class. Recall that <strong>instance variables</strong> are <em><strong>unique</strong></em> to individual objects created from the class.</p>
+
+<p>To clarify, given a class <code>MyClass</code>,</p>
+
+<div><pre><code class="language-python">class MyClass:
+    def __init__(self, foo):
+        self.foo = foo</code></pre></div>
+
+<p>an <strong>instance</strong> <code>my_class</code> of the class is created by invoking the <em>constructor</em> of that class.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; my_class = MyClass(42)</code></pre></div>
+
+<p>Now we can access the <strong>instance variable</strong> <code>foo</code> of <code>my_class</code>.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; my_class.foo
+42</code></pre></div>
+
+<p>Notice that we <em>can&#39;t</em> access the <code>my_var</code> variable from the class itself.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.foo
+AttributeError: type object &#39;MyClass&#39; has no attribute &#39;foo&#39;</code></pre></div>
+
+<p>The key here is that <code>my_var</code> lives in the namespace of the <code>my_class</code> instance and <strong>not</strong> the type object <code>MyClass</code> itself, which we can easily verify.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; &#39;foo&#39; in my_class.__dict__
+True
+&gt;&gt;&gt; &#39;foo&#39; in MyClass.__dict__
+False</code></pre></div>
+
+<p>Notice that instance variables are defined on the <code>self</code> parameter inside the <code>__init__</code> constructor. Since class variables belong to the type object itself, they are defined as variables directly in the class&#39;s scope. That is, they not defined inside the constructor because they have nothing to do with the particular instances being created.</p>
+
+<div><pre><code class="language-python">class MyClass:
+    bar = &#39;Hello World!&#39;
+
+    def __init__(self, foo):
+        self.foo = foo</code></pre></div>
+
+<p>Now, when we create multiple instances, they will all share the same value of <code>bar</code>, but they will each have their own <code>foo</code>.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; instance_1 = MyClass(42)
+&gt;&gt;&gt; instance_2 = MyClass(36)
+
+&gt;&gt;&gt; instance_1.foo
+42
+&gt;&gt;&gt; instance_2.foo
+&#39;Hello World!&#39;
+&gt;&gt;&gt; instance_1.bar
+36
+&gt;&gt;&gt; instance_2.bar
+&#39;Hello World!&#39;</code></pre></div>
+
+<p>We can also access <code>bar</code> directly from the type object <code>MyClass</code>.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.bar
+&#39;Hello World!&#39;</code></pre></div>
+
+<p>Now, let&#39;s verify that <code>foo</code> only lives in the instance&#39;s namespace, while <code>bar</code> only lives in the type object&#39;s namespace.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; &#39;foo&#39; in my_class.__dict__
+True
+&gt;&gt;&gt; &#39;bar&#39; in my_class.__dict__
+False
+
+&gt;&gt;&gt; &#39;foo&#39; in MyClass.__dict__
+False
+&gt;&gt;&gt; &#39;bar&#39; in MyClass.__dict__
+True</code></pre></div>
+
+<p>Okay, one last piece of puzzle. What happens if I change the value of <code>bar</code> on the type object <code>MyClass</code>?</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.bar = &#39;Something different&#39;
+
+&gt;&gt;&gt; instance_1.bar
+&#39;Something different&#39;
+&gt;&gt;&gt; instance_2.bar
+&#39;Something different&#39;</code></pre></div>
+
+<p>Naturally, the value is updated for all of the instances because <code>bar</code> exists at the class level. But what happens if I try to modify <code>bar</code> on only one of the instances?</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; instance_1.bar = &#39;Unique to me!&#39;
+
+&gt;&gt;&gt; instance_1.bar
+&#39;Unique to me!&#39;
+&gt;&gt;&gt; instance_2.bar
+&#39;Something different&#39;</code></pre></div>
+
+<p>Rather than updating the value for all instances, it only modified that one instance. To understand what&#39;s going on, let&#39;s check the namespaces again.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; &#39;foo&#39; in my_class.__dict__
+True
+&gt;&gt;&gt; &#39;bar&#39; in my_class.__dict__
+True
+
+&gt;&gt;&gt; &#39;foo&#39; in MyClass.__dict__
+False
+&gt;&gt;&gt; &#39;bar&#39; in MyClass.__dict__
+True</code></pre></div>
+
+<p>Notice that <code>bar</code> is now a contained in the namespace of <code>instance_1</code>. So we actually didn&#39;t <em>modify</em> the class variable, we <em>created</em> an instance variable. This is because Python allows the creation of instance variables via attribute assignment.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; instance_1.baz = &#39;Happy Birthday&#39;
+
+&gt;&gt;&gt; &#39;baz&#39; in instance_1.baz
+True
+&gt;&gt;&gt; instance_1.baz
+&#39;Happy Birthday&#39;</code></pre></div>
+
+<p>Notice that even though <code>baz</code> was never declared in the class definition, Python let me assign it a value.</p>
+
+<p>When we attempt to access attributes, Python checks a number of locations in a specific order to see if exists:</p>
+
+<ol>
+<li>the namespace of the instance</li>
+<li>the namespace of the type object</li>
+<li>the namespaces of any type objects the class inherits from</li>
+</ol>
+
+<p>We&#39;ll talk about inheritance structures in just a bit, so don&#39;t worry about that for now. The point is, Python first investigates the instance, then the type object. So when we tried to change the value of <code>bar</code> on <code>instance_1</code>, we ended up creating a instance variables that superseded the class variable when we tried to access the attribute.</p>
+
+<p>Understanding this distinction is key because we can see different behavior in our methods if we use <code>MyClass.bar</code> instead of <code>self.bar</code>. Using the <code>MyClass.bar</code> guarantees that the class variables is used, while <code>self.bar</code> will use an instance variable if it exits, otherwise it will fall back to the class variable.</p>
+
+<p>For more information, check out the <a href="https://docs.python.org/3/tutorial/classes.html#class-and-instance-variables">docs</a>.</p>
+
+<h2 id="toc_2">Class methods</h2>
+
+<p>Just like variables, methods can act on instances of the class or the class itself. <strong>Instance methods</strong> are the standard functions we&#39;ve seen in classes up to this point. Recall that instance methods always start with the a special parameter (usually called <code>self</code>) that refers to the particular instance that calls that function.</p>
+
+<div><pre><code class="language-python">class MyClass:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def my_instance_method(self):
+        print(self.x, self.y)
+        
+&gt;&gt;&gt; my_instance = MyClass(&#39;a&#39;, &#39;b&#39;)
+&gt;&gt;&gt; my_instance.my_instance_method()
+a b</code></pre></div>
+
+<p>This is equivalent to calling the method directly on the class object and passing the instance as the first argument.</p>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.my_instance_method(my_instance)
+a b</code></pre></div>
+
+<p>Now, don&#39;t be fooled, this is still an instance method because we need to pass the instance as argument.</p>
+
+<p>However, there is a way to create <strong>class methods</strong> which act on the class object directly. We achieve this by way of the <a href="https://docs.python.org/3/library/functions.html?highlight=classmethod#classmethod"><code>classmethod</code> decorator</a>.</p>
+
+<div><pre><code class="language-python">class MyClass:
+    z = &#39;c&#39;
+
+    @classmethod
+    def my_class_method(cls):
+        print(cls.z)</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.z
+&#39;c&#39;
+&gt;&gt;&gt; MyClass.my_class_method()
+c</code></pre></div>
+
+<p>Much like instance methods, class methods take an implicit first argument (typically called <code>cls</code> to mean class, since <code>class</code> is restricted keyword in Python), but rather than referencing a particular object, it refers to the type object itself.</p>
+
+<p>While it is possible to call class methods from instance variables, it isn&#39;t common in best practices.</p>
+
+<h2 id="toc_3">Static Methods</h2>
+
+<p>There is third possibility when it comes to methods. Sometimes we have logic that is related to the class, but doesn&#39;t affect any instances or even the class itself. That is, the method performs some static calculations that are relevant to the class. These are called <strong>static methods</strong>, and they are accessed with the <a href="https://docs.python.org/3/library/functions.html?highlight=classmethod#staticmethod"><code>staticmethod</code> decorator</a>.</p>
+
+<p>Unlike instance and class methods, static methods have no implicit first argument since they don&#39;t act on anything (this is why they are called <em>static</em>).</p>
+
+<div><pre><code class="language-python">class MyClass:
+    @staticmethod
+    def my_static_method():
+        print(2 + 2)</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; MyClass.my_static_method()
+4
+
+&gt;&gt;&gt; instance = MyClass()
+&gt;&gt;&gt; instance.my_static_method()
+4</code></pre></div>
+
+<p>Notice that static methods can be called from either instances or the type object directly.</p>
+
+<h2 id="toc_4">Inheritance</h2>
+
+<p>When we have classes that share a lot of the same functionality, we can create a hierarchical model in which on class become the child of another class. This parent-child relationship is meant to evoke the idea that the child <strong>inherits</strong> the traits of its parent.</p>
+
+<div><pre><code class="language-python">class Employee:
+    raise_amount = 1.04
+    
+    def __init__(self, first_name, last_name, pay):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = f&quot;{self.last_name}.{self.first_name}@company.com&quot;
+        self.pay = pay
+    
+    def apply_raise(self):
+        self.pay *= self.raise_amount</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; employee = Employee(&#39;John&#39;, &#39;Doe&#39;, 60000)
+&gt;&gt;&gt; employee.email
+&#39;Doe.John@company.com&#39;</code></pre></div>
+
+<div><pre><code class="language-python">class Developer(Employee):
+    pass</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; developer = Developer(&#39;Jane&#39;, &#39;Doe&#39;, 70000)
+&gt;&gt;&gt; developer.email
+&#39;Doe.John@company.com&#39;</code></pre></div>
+
+<p>Notice that for all intents and purposes, <code>developer</code> behave exactly like <code>employee</code> even though we haven&#39;t added any code to the <code>Developer</code> class. Now, if we decide that we want to reward our developers a little more than other generic employees, we could simply change the <code>raise_amount</code> for the <code>Developer</code> class.</p>
+
+<div><pre><code class="language-python">class Developer(Employee):
+    raise_amount = 1.07</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; employee.apply_raise()
+&gt;&gt;&gt; employee.pay</code></pre></div>
+
+<div><pre><code class="language-python">&gt;&gt;&gt; developer.apply_raise()
+&gt;&gt;&gt; developer.pay</code></pre></div>
+
+<p>The parent class is called a <strong>superclass</strong> and the child class is called a <strong>subclass</strong>. If we want our subclasses to be initialized with additional variables we can override the class initializer. We still want to use the constructor logic from the superclass, so Python give us access to the <code>super</code> keyword as an alias for the superclass.</p>
+
+<div><pre><code class="language-python">class Developer(Employee):
+    raise_amount = 1.07
+    
+    def __init__(self, first_name, last_name, pay, primary_language):
+        super().__init__(first_name, last_name, pay)
+        self.primary_language = primary_language</code></pre></div>
+
+<p>We may also want our subclasses to have additional functionality, or even override existing functionality. If we define a method with the same signature as a superclass, we will essentially replace the default behavior with our own.</p>
+
+<div><pre><code class="language-python">class Manager(Employee):
+    raise_amount = 1.10
+    bonus = 2000
+    
+    def __init__(self, first_name, last_name, pay, employee):
+        super().__init__(first_name, last_name, pay)
+        if employees is None:
+            self.employees = []
+        else:
+            self.employees = employees
+    
+    @override
+    def apply_raise(self):
+        self.pay = super().apply_raise() + self.bonus
+    
+    def add_employee(self, employee):
+        self.employees.append(employee)
+    
+    def delete_employee(self, employee):
+        self.employees.remove(employee)</code></pre></div>
+
+<p>See the <a href="https://docs.python.org/3/tutorial/classes.html#inheritance">docs</a> for details.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
